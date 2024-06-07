@@ -1,9 +1,7 @@
 This is pranay ...
-<<<<<<< HEAD
-testing 1 
-=======
 
 Testing 1 
 
 branch main testing 
->>>>>>> main
+
+new branch mering testing 
