@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>Thymeleaf Demo</title>
+
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<form th:action="@{/processformVersiontwo}"  method="GET">
+
+  <input type="text" name="studentName" placeholder="Please enter studentName">
+  <input type="submit">
+
+</form>
+
+
+</body>
+
+</html>
