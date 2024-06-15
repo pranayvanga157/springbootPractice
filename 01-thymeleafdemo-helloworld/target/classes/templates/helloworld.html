@@ -9,6 +9,7 @@
 
 <body>
 
+ <!-- modification 1 -->
   <!--  <p th:text="'Time on the server is ' + ${theDate}" />
 
 
@@ -19,13 +20,26 @@
 
     <h1>Welcome to Thymeleaf</h1>
     <p th:text="'Hello, ' + ${name} + '!'">Hello, World!</p>
-    <p th:text="'Current Date and Time: ' + ${theData}">Current Date and Time</p>-->
+    <p th:text="'Current Date and Time: ' + ${theData}">Current Date and Time</p>
 
   <p th:text = "'Hello , '+ ${param.studentName}"/>
 
 
 <p th:text = "${message}"/>
+-->
 
+
+
+ <!-- modification 2 -->
+
+
+<p th:text="'Hello! , '+${student.firstName} +'' +${student.lastName}"/>
+
+<p th:text = "'Country :'+${student.country}"/>
+
+Language : <p th:text = "${student.languages}"/>
+
+System : <p th:text="${student.system}"/>
 </body>
 
 </html>

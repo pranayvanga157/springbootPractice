@@ -1,22 +1,31 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
-
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
   <title>Thymeleaf Demo</title>
-
   <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
-
 <body>
+<form th:action="@{/processformVersionfour}" th:object = "${student}"  method="POST">
+  FirstName : <input type="text" th:field="*{firstName}" ><br>
+  LastName:<input type="text" th:field="*{lastName}" ><br>
+  <select th:field = "*{country}">
+    <option th:each = "tempCountry : ${country}" th:value="${tempCountry}" th:text ="${tempCountry}"</option>
+  </select>
 
-<form th:action="@{/processformVersiontwo}"  method="GET">
-
-  <input type="text" name="studentName" placeholder="Please enter studentName">
+  Languages :
+  <!--<input type="radio" th:field = "*{languages}" th:value="JAVA"> JAVA </input>
+  <input type="radio" th:field = "*{languages}" th:value="PYTHON"> PYTHON </input>
+  <input type="radio" th:field = "*{languages}" th:value="GO"> GO </input>-->
+  
+  <input type="radio" th:field="*{languages}" th:each="tempLanguages : ${languages}" th:value = "${tempLanguages}" th:text="${tempLanguages}"/>
+  <br>
+<!--  <input type = "checkbox" th:field ="*{system}" th:value = "Android" >Android</input>
+  <input type = "checkbox" th:field ="*{system}" th:value = "IOS" >IOS</input>
+  <input type = "checkbox" th:field ="*{system}" th:value = "Linux" >Linux</input>-->
+<br>
+  <input type = "checkbox" th:field ="*{system}" th:each = "tempSys : ${systems}" th:value = "${tempSys}" th:text = "${tempSys}" />
+<br>
   <input type="submit">
-
 </form>
-
-
 </body>
-
 </html>

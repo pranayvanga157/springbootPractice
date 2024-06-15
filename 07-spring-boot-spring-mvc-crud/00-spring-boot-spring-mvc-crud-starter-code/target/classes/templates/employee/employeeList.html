@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<a th:href="@{/employees/employeeAddForm}" class="btn btn-primary">Add Employee</a>
+
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr  th:each="temp : ${employee}">
+      <td th:text = "${temp.firstName}"/>
+      <td th:text = "${temp.lastName}"/>
+      <td th:text = "${temp.email}"/>
+      <td><a th:href="@{/employees/employeeUpdateForm(employeeId =${temp.id})}" >Update</a></td>
+      <td><a th:href="@{/employees/delete(employeeId =${temp.id})}" >Delete</a></td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
